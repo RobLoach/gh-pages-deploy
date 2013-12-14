@@ -1,0 +1,28 @@
+{
+    "name": "robloach/gh-pages-deploy",
+    "type": "library",
+    "description": "Deploys a number of repositories using the gh-pages branch.",
+    "homepage": "https://github.com/RobLoach/gh-pages-deploy",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "See contributors",
+            "homepage": "https://github.com/RobLoach/gh-pages-deploy/graphs/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/RobLoach/gh-pages-deploy/issues"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "cpliakas/git-wrapper": "1.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "GitHubPagesDeploy": "src/"
+        }
+    },
+    "bin": [
+        "bin/gh-pages-deploy"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "chmod": "0755",
+    "directories": ["src", "bin"],
+    "files": [
+        "LICENSE.md",
+        "README.md"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": [
+                "phing",
+                "test",
+                "tests",
+                "Test",
+                "Tests",
+                "Tester"
+            ],
+            "in": "vendor"
+        }
+    ],
+    "main": "bin/gh-pages-deploy",
+    "output": "gh-pages-deploy.phar",
+    "stub": true
+}
