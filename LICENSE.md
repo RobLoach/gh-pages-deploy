@@ -1,7 +1,7 @@
 LICENSE
 =======
 
-GitHub Pages Manager is released under the MIT License:
+GitHub Pages Deploy is released under the MIT License:
 
 > Copyright (C) 2013 [Rob Loach](http://robloach.net)
 >

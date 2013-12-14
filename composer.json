@@ -1,4 +1,5 @@
 {
+    "title": "GitHub Pages Deploy",
     "name": "robloach/gh-pages-deploy",
     "type": "library",
     "description": "Deploys a number of repositories using the gh-pages branch.",
