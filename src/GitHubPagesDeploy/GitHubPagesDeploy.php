@@ -41,8 +41,17 @@ class GitHubPagesDeploy
                 $git = new GitWorkingCopy($wrapper, $dir);
             }
 
+            // Remove any local changes.
+            $git->reset(array('hard' => true));
+
+            // Ensure we are on the correct branch.
             $git->checkout('gh-pages');
+
+            // Pull in any changes.
             $git->pull();
+
+            // Ensure there aren't any local changes.
+            $git->reset(array('hard' => true));
         }
     }
 
