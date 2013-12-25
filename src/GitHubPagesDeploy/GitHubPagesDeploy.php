@@ -45,17 +45,8 @@ class GitHubPagesDeploy
             // Fetch all the latest.
             $git->fetch('--all');
 
-            // Remove any local changes.
-            $git->reset(array('hard' => true));
-
-            // Clean up the repository.
-            $git->run(array('clean', array('d' => TRUE, 'f' => TRUE)));
-
-            // Ensure we are on the correct branch.
-            $git->checkout('gh-pages', array('force' => TRUE));
-
-            // Finally, pull in the changes.
-            $git->pull();
+            // Reset over to the gh-pages branch.
+            $git->reset('origin/gh-pages', array('hard' => true));
         }
     }
 
