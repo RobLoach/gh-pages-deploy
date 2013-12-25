@@ -33,6 +33,7 @@ class GitHubPagesDeploy
         $wrapper->streamOutput();
 
         foreach ($this->repositories as $dir => $repo) {
+            // Build our git interface.
             $git = null;
             if (!is_dir($dir)) {
                 $git = $wrapper->cloneRepository($repo, $dir);
@@ -41,17 +42,20 @@ class GitHubPagesDeploy
                 $git = new GitWorkingCopy($wrapper, $dir);
             }
 
+            // Fetch all the latest.
+            $git->fetch('--all');
+
             // Remove any local changes.
             $git->reset(array('hard' => true));
 
+            // Clean up the repository.
+            $git->run(array('clean', array('d' => TRUE, 'f' => TRUE)));
+
             // Ensure we are on the correct branch.
-            $git->checkout('gh-pages');
+            $git->checkout('gh-pages', array('force' => TRUE));
 
-            // Pull in any changes.
+            // Finally, pull in the changes.
             $git->pull();
-
-            // Ensure there aren't any local changes.
-            $git->reset(array('hard' => true));
         }
     }
 

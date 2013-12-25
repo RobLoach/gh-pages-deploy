@@ -1,7 +1,6 @@
 # GitHub Pages Deploy
 
-Deploys a number of repositories using the `gh-pages` branch, and keeps them
-up to date.
+Deploy and maintain a number of static web applications on GitHub pages.
 
 
 ## Installation
@@ -31,3 +30,15 @@ $ php composer.phar create-project robloach/gh-pages-deploy
 ``` bash
 $ gh-pages-deploy/bin/gh-pages-deploy deploy
 ```
+
+3. Set up a cron job to deploy every once in a while.
+``` bash
+$ gh-pages-deploy/bin/gh-pages-deploy deploy
+```
+
+
+## License
+
+Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/)
+
+Copyright &copy; Rob Loach (http://robloach.net)
