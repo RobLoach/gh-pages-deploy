@@ -29,12 +29,6 @@ class DeployCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $deploy = GitDeploy::fromFile($input->getOption('file'));
-        $repositories = $deploy->getRepositories();
-        if (empty($repositories)) {
-            $output->writeln('<info>Configuration file empty.</info>');
-        }
-        else {
-            $deploy->update();
-        }
+        $deploy->deploy();
     }
 }

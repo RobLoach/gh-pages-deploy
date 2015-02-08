@@ -26,16 +26,33 @@ Deploy and maintain a number of git repositories through PHP.
 
 ## Usage
 
-1. Create a `gh-pages-deploy.json` file:
+1. Create a `git-deploy.json` file:
 
     ``` json
     {
         "mywebsite": "https://github.com/my/website.git",
-        "myotherwebsite": "https://github.com/my/otherwebsite.git"
+        "myotherwebsite": {
+          "repo": "https://github.com/my/otherwebsite.git"
+        },
+        "mythirdwebsite": {
+          "repo": "https://github.com/my/otherwebsite.git",
+          "branches": [
+            "branch1",
+            "branch2"
+          ]
+        },
+        "myfourthwebsite": {
+          "repo": "https://github.com/my/otherwebsite.git",
+          "branches": {
+            "branch1": "path/to/destination/branch1",
+            "branch2": "path/to/destination/branch2",
+            "branch3": "path/to/destination/branch3"
+          }
+        }
     }
     ```
 
-2. Execute GitHub Pages Deploy to deploy all sites:
+2. Execute Git Deploy to deploy all sites:
 
     ``` bash
     gh-pages-deploy/bin/gh-pages-deploy deploy
