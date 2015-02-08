@@ -1,13 +1,13 @@
 <?php
 
-namespace GitHubPagesDeploy\Console;
+namespace GitDeploy\Console;
 
 use Symfony\Component\Console\Application as BaseApplication;
-use GitHubPagesDeploy\Console\Command\DeployCommand;
+use GitDeploy\Console\Command\DeployCommand;
 
 class Application extends BaseApplication
 {
-    const NAME = 'GitHub Pages Deploy';
+    const NAME = 'Git Deploy';
     const VERSION = '@package_version@';
 
     public function __construct()

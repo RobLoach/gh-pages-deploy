@@ -19,7 +19,7 @@
             "in": "vendor"
         }
     ],
-    "main": "bin/gh-pages-deploy",
-    "output": "gh-pages-deploy.phar",
+    "main": "bin/git-deploy",
+    "output": "git-deploy.phar",
     "stub": true
 }

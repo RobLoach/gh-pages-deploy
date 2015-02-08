@@ -1,12 +1,12 @@
 <?php
 
 if (PHP_SAPI !== 'cli') {
-    echo 'Warning: GitHub Pages Deploy should be invoked via the CLI version of PHP, not the '.PHP_SAPI.' SAPI'.PHP_EOL;
+    echo 'Warning: Git Deploy should be invoked via the CLI version of PHP, not the '.PHP_SAPI.' SAPI'.PHP_EOL;
 }
 
 require __DIR__.'/../src/bootstrap.php';
 
-use GitHubPagesDeploy\Console\Application;
+use GitDeploy\Console\Application;
 
 error_reporting(-1);
 

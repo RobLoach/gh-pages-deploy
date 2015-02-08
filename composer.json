@@ -1,30 +1,31 @@
 {
-    "title": "GitHub Pages Deploy",
-    "name": "robloach/gh-pages-deploy",
-    "type": "library",
-    "description": "Deploys a number of repositories using the gh-pages branch.",
-    "homepage": "https://github.com/RobLoach/gh-pages-deploy",
+    "title": "Git Deploy",
+    "name": "robloach/git-deploy",
+    "type": "project",
+    "description": "Deploy and manage git deployments.",
+    "homepage": "https://github.com/RobLoach/git-deploy",
     "license": "MIT",
     "authors": [
         {
             "name": "See contributors",
-            "homepage": "https://github.com/RobLoach/gh-pages-deploy/graphs/contributors"
+            "homepage": "https://github.com/RobLoach/git-deploy/graphs/contributors"
         }
     ],
     "support": {
-        "issues": "https://github.com/RobLoach/gh-pages-deploy/issues"
+        "issues": "https://github.com/RobLoach/git-deploy/issues"
     },
     "require": {
         "php": ">=5.3.0",
-        "cpliakas/git-wrapper": "1.2.*",
-        "symfony/console": "2.4.*"
+        "cpliakas/git-wrapper": "~1.4.1",
+        "symfony/console": "~2.6.4"
     },
     "autoload": {
         "psr-0": {
-            "GitHubPagesDeploy": "src/"
+            "GitDeploy": "src/"
         }
     },
     "bin": [
-        "bin/gh-pages-deploy"
+        "bin/git-deploy",
+        "bin/git-deploy.php"
     ]
 }

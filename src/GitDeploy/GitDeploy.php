@@ -1,11 +1,11 @@
 <?php
 
-namespace GitHubPagesDeploy;
+namespace GitDeploy;
 
 use GitWrapper\GitWrapper;
 use GitWrapper\GitWorkingCopy;
 
-class GitHubPagesDeploy
+class GitDeploy
 {
     protected $repositories;
 
@@ -14,7 +14,7 @@ class GitHubPagesDeploy
         $this->repositories = $repositories;
     }
 
-    public static function fromFile($file = 'gh-pages-deploy.json')
+    public static function fromFile($file = 'git-deploy.json')
     {
         $results = array();
 
@@ -23,7 +23,7 @@ class GitHubPagesDeploy
             $results = json_decode($contents);
         }
 
-        return new GitHubPagesDeploy($results);
+        return new GitDeploy($results);
     }
 
     public function update()
@@ -47,6 +47,9 @@ class GitHubPagesDeploy
 
             // Reset over to the gh-pages branch.
             $git->reset('origin/gh-pages', array('hard' => true));
+
+            // Remove any extra files.
+            $git->clean('-d', '-f', '-x');
         }
     }
 

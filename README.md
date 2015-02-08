@@ -1,6 +1,12 @@
-# GitHub Pages Deploy
+# Git Deploy
 
-Deploy and maintain a number of static web applications on GitHub pages.
+Deploy and maintain a number of git repositories through PHP.
+
+
+## Requirements
+
+* PHP 5.4 or greater
+* [Composer](http://getcomposer.org)
 
 
 ## Installation
@@ -11,10 +17,10 @@ Deploy and maintain a number of static web applications on GitHub pages.
     $ php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"
     ```
 
-2. Use Composer to download GitHub Pages Deploy:
+2. Use Composer to install Git Deploy:
 
     ``` bash
-    $ php composer.phar create-project robloach/gh-pages-deploy
+    $ php composer.phar create-project robloach/git-deploy
     ```
 
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace GitHubPagesDeploy\Console\Command;
+namespace GitDeploy\Console\Command;
 
-use GitHubPagesDeploy\GitHubPagesDeploy;
+use GitDeploy\GitDeploy;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -15,16 +15,23 @@ class DeployCommand extends Command
     {
         $this
             ->setName('deploy')
-            ->setDescription('Deploys the list of GitHub Pages repositories.')
+            ->setDescription('Deploys the list of repositories.')
+            ->addOption(
+                'file',
+                'f',
+                InputOption::VALUE_OPTIONAL,
+                'The configuration file to load.',
+                'git-deploy.json'
+            )
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $deploy = GitHubPagesDeploy::fromFile();
+        $deploy = GitDeploy::fromFile($input->getOption('file'));
         $repositories = $deploy->getRepositories();
         if (empty($repositories)) {
-            $output->writeln('<info>gh-pages-deploy.json is empty.</info>');
+            $output->writeln('<info>Configuration file empty.</info>');
         }
         else {
             $deploy->update();
